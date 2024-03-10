@@ -1,8 +1,13 @@
 //Create arrays for trip location, season and type
 const trip = {
-tripLocation: ['Austrailia', 'Bali', 'Spain', 'Vietnam', 'Iceland', 'Ireland', 'Zimbabwe', 'Norway', 'South Korea', 'Brazil', 'Canada', 'Antarctica'],
+tripLocation: {
+    tropical: ['Brazil', 'Bali', 'Thailand', 'Bermuda', 'Canary Islands'],
+    mountain: ['Norway', 'Austria', 'Switzerland', 'Chile', 'Nepal'],
+    culture: ['Japan', 'Spain', 'Morocco', 'India', 'South Korea'],
+    adventure: ['Antartica', 'Australia', 'Zimbabwe', 'New Zealand', 'Iceland']
+},
 tripSeason: ['summer', 'fall', 'winter', 'spring'],
-tripType: ['solo', 'with friends', 'with family']
+tripType: ['solo', 'with friends', 'with family'],
 };
 
 //Create trip variables to hold random elements from arrays
