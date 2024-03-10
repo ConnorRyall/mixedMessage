@@ -11,16 +11,33 @@ tripType: ['solo', 'with friends', 'with family'],
 };
 
 //Create trip variables to hold random elements from arrays
-const tripLocation = trip.tripLocation[Math.floor(Math.random() * trip.tripLocation.length)];
+let tripLocation = 'TBD';
+const chooseTrip = input => {
+    switch(input) {
+        case 'tropical':
+            tripLocation = trip.tripLocation.tropical[Math.floor(Math.random() * trip.tripLocation.tropical.length)];
+            break;
+        case 'mountain':
+            tripLocation = trip.tripLocation.mountain[Math.floor(Math.random() * trip.tripLocation.mountain.length)];
+            break;
+        case 'culture':
+            tripLocation = trip.tripLocation.culture[Math.floor(Math.random() * trip.tripLocation.culture.length)];
+            break;
+        case 'adventure':
+            tripLocation = trip.tripLocation.adventure[Math.floor(Math.random() * trip.tripLocation.adventure.length)];
+            break;
+        default:
+            console.log('Please choose a valid input: tropical, mountain, culture or adventure.');
+    }
+};
 const tripSeason = trip.tripSeason[Math.floor(Math.random() * trip.tripSeason.length)];
 const tripType = trip.tripType[Math.floor(Math.random() * trip.tripType.length)];
 
-//Create variable to hold trip variables
-const tripData = [tripLocation, tripSeason, tripType];
-
 //Create formatted output message 
-const message = name => {
+const message = (name) => {
     return `Hello ${name}! You should go to ${tripLocation} in ${tripSeason} ${tripType}.`;
 }
-//Execute message
+
+//Select trip type and execute message
+chooseTrip('adventure');
 console.log(message('Connor'));
